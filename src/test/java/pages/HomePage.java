@@ -22,7 +22,7 @@ public class HomePage {
     public void openMainMenu() {
         baseFunc.getElement(MENUBTN).click();
     }
-
+//
     public void selectProducts(String products) {
         baseFunc.waitForElement(MENU);
         List<WebElement> tabs = baseFunc.getALLElements(MENU);

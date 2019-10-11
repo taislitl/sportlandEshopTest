@@ -1,0 +1,10 @@
+Feature: sportland page test
+
+  Scenario: products filtering
+    Given open "sportland.lv" home page
+    When from main menu select "PRODUKTI"
+    And select "ZĒNI" category, "APAVI" subcategory for "Futbols" product
+    And sort by "Izpārdošana"
+    Then verify are all products for sale
+    And save text file with products price less than 50.00 EUR
+    And save json file with products price less than 50.00 EUR

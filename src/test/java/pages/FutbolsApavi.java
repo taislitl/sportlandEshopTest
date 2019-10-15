@@ -42,6 +42,7 @@ public class FutbolsApavi {
         baseFunc.waitUntil();
         baseFunc.getElement(BRANDBTN).click();
 
+
     }
 
 

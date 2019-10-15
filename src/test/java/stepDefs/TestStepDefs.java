@@ -30,13 +30,12 @@ public class TestStepDefs {
 
     @When("select {string} category, {string} subcategory for {string} product")
     public void select_fulbols_apavi(String category, String subcategory, String productkind) {
-        //  menuCategory = helpers.getCategory(category);
         helpers.getProductKind(category, subcategory, productkind);
 
     }
 
     @When("sort by {string}")
-    public void sort_by_some_param(String value) throws InterruptedException {
+    public void sort_by_some_param(String value) {
         futbolsApavi.sortByValue(value);
         futbolsApavi.selectFilter();
     }

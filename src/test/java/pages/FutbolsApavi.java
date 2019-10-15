@@ -30,33 +30,32 @@ public class FutbolsApavi {
     }
 
 
-    public void sortByValue(String value) throws InterruptedException {
+    public void sortByValue(String value) {
         baseFunc.waitForElement(FILTER);
         Select sale = new Select(baseFunc.getElement(FILTER));
         sale.selectByVisibleText(value);
-        Thread.sleep(4000);
+        baseFunc.waitUntil();
 
     }
 
-    public void selectFilter() throws InterruptedException {
+    public void selectFilter() {
+        baseFunc.waitUntil();
         baseFunc.getElement(BRANDBTN).click();
-        Thread.sleep(4000);
+
     }
 
 
     public void verifyAllProductsForSale() {
-
         List<WebElement> percentage = baseFunc.getALLElements(PERCENTAGE);
         List<WebElement> count = baseFunc.getALLElements(PRODUCTSAMOUNT);
-        for (int i = 0; i < percentage.size(); i++) {
-            for (int j = 0; j < count.size(); j++) {
+
                 Assertions.assertTrue(percentage.size() == count.size(), "all products have cheapest price");
-            }
-            break;
-        }
+
+        baseFunc.waitUntil();
     }
 
     public void verifyBrandForAllProducts() {
+        baseFunc.waitUntilCbl(BRANDBTN);
         List<WebElement> brand = baseFunc.getALLElements(BRANDNAME);
         for (int i = 0; i < brand.size(); i++) {
 

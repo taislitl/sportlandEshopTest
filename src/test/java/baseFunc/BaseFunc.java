@@ -8,12 +8,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BaseFunc {
 
     private WebDriver driver;
     private WebDriverWait wait;
+
 
 
     public BaseFunc() {
@@ -51,6 +54,10 @@ public class BaseFunc {
     public void waitForElement(By locator) {
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
     }
-
-
+    public void waitUntil() {
+        driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS);
+    }
+    public void waitUntilCbl(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
 }

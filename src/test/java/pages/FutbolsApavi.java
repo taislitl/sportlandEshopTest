@@ -101,17 +101,18 @@ public class FutbolsApavi {
             double actualPrice;
             for (int i = 0; i < products.size(); i++) {
                 String prodname = name.get(i).getText();
-                String test = products.get(i).getText().substring(0, 5);
-                actualPrice = Double.parseDouble(test);
+                String dropeiro = products.get(i).getText().substring(0, 5);
+                actualPrice = Double.parseDouble(dropeiro);
                 if (actualPrice < price) {
 
                     jObj.put(prodname, actualPrice);
                     list.add(jObj);
-                    pWriter.write(jObj.toJSONString());
+
 
                 }
                 pWriter.flush();
             }
+            pWriter.write(jObj.toJSONString());
 
         } catch (IOException ex) {
 
